@@ -65,7 +65,12 @@ $RECYCLE.BIN/
 # Logs and databases
 ############################
 
-.tmp
+# Ignore everything inside `.tmp`
+.tmp/*
+
+# BUT allow tracking of data.db inside `.tmp`
+!.tmp/data.db
+
 *.log
 *.sql
 *.sqlite
@@ -80,8 +85,12 @@ $RECYCLE.BIN/
 ssl
 .idea
 nbproject
-public/uploads/*
-!public/uploads/.gitkeep
+# public/uploads/*
+# !public/uploads/.gitkeep
+# Allow all media uploads to be committed
+!public/uploads/
+!public/uploads/**
+
 .tsbuildinfo
 .eslintcache
 
