@@ -1,0 +1,70 @@
+{
+    "kind": "collectionType",
+    "collectionName": "services",
+    "info": {
+        "singularName": "service",
+        "pluralName": "services",
+        "displayName": "Service",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {
+        "i18n": {
+            "localized": true
+        }
+    },
+    "attributes": {
+        "Title": {
+            "type": "string",
+            "required": true,
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
+        },
+        "Description": {
+            "type": "text",
+            "required": true,
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
+        },
+        "Icon": {
+            "type": "enumeration",
+            "enum": [
+                "Scale",
+                "Building",
+                "Gavel",
+                "Rocket"
+            ],
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
+        },
+        "service_contents": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::service-content.service-content"
+        },
+        "Concoction": {
+            "type": "text",
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
+        },
+        "Slug": {
+            "type": "string",
+            "required": true,
+            "unique": true
+        }
+    }
+}

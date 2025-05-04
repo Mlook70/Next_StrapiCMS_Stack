@@ -1,0 +1,130 @@
+{
+  "clients": {
+    "title": "What Our Clients Say",
+    "subtitle": "Hear from our valued clients about their experience working with our team",
+    "loading": "Loading testimonials...",
+    "error": "Error loading testimonials. Please try again later.",
+    "noTestimonials": "No testimonials found. Please add client testimonials in your CMS.",
+    "prevButton": "Previous testimonial",
+    "nextButton": "Next testimonial"
+  },
+  "navigation": {
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Legal & Consulting Services for Businesses and Individuals",
+    "subtitle": "Professional legal advice and consulting services tailored to your unique needs",
+    "cta": "Book a Consultation",
+    "prevSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "goToSlide": "Go to slide {number}",
+    "avatarAlt": "Profile avatar",
+    "loading": "Loading ..."
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Meet our experienced professionals dedicated to providing excellent service",
+    "position": "Position",
+    "loading": "Loading team members...",
+    "error": "Error loading team members. Please try again later.",
+    "noTeamMembers": "No team members found. Please add team members in your CMS.",
+    "prevButton": "Previous member",
+    "nextButton": "Next member",
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "email": "Email"
+  },
+  "search": {
+    "back": "Back",
+    "resultsFor": "Results for",
+    "allTeamsAndServices": "All teams and services",
+    "all": "All",
+    "team": "Team",
+    "services": "Services",
+    "loading": "Loading results...",
+    "error": "Error loading results. Please try again later.",
+    "noResults": "No results found for your search query.",
+    "noTeamsOrServices": "No teams or services available.",
+    "teamMembers": "Team Members",
+    "prevPage": "Previous page",
+    "nextPage": "Next page"
+  },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Explore the range of professional services we offer",
+      "loading": "Loading services...",
+      "errorTitle": "Error Loading Services",
+      "error": "We couldn't load the services information. Please try again later.",
+      "noServices": "No services found. Please add services in your CMS.",
+      "learnMore": "Learn More"
+    },
+    "header": {
+      "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "team": "Team",
+        "blog": "Blog",
+        "contact": "Contact",
+        "appointment": "Make Appointment"
+      },
+      "services": {
+        "loading": "Loading services...",
+        "error": "Failed to load services. Please try again later.",
+        "readMore": "Read more"
+      },
+      "search": {
+        "label": "Search"
+      },
+      "menu": {
+        "toggle": "Toggle menu"
+      }
+    },
+    "footer": {
+      "companyDescription": "Professional legal and consulting services for individuals and businesses.",
+      "quickLinks": "Quick Links",
+      "contactUs": "Contact Us",
+      "phone": "Phone",
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email address",
+        "error": "Please enter a valid email address"
+      },
+      "subscribe": "Subscribe to our newsletter",
+      "subscribeButton": "Subscribe",
+      "subscribeSuccess": "Thank you for subscribing!",
+      "about": "About",
+      "strategy": "Our Strategy",
+      "advantages": "Our Advantages",
+      "social": "Social Responsibility",
+      "services": "Our Services",
+      "copyright": "Al Saif & Partners. All rights reserved.",
+      "rights": "All rights reserved.",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "cookies": "Cookies",
+      "contacts": "Contacts"
+    },
+    "appointment": {
+      "title": "Book an Appointment",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email address",
+      "phone": "Phone Number",
+      "date": "Date",
+      "time": "Time",
+      "selectTime": "Select time",
+      "service": "Service",
+      "selectService": "Select service",
+      "other": "Other",
+      "information": "Additional Information",
+      "informationPlaceholder": "Please provide details about your request",
+      "submit": "Submit Request",
+      "submitting": "Submitting...",
+      "loadingServices": "Loading services...",
+      "servicesFetchError": "Could not load services",
+      "successTitle": "Request Received",
+      "successMessage": "We will contact you shortly to confirm your appointment."
+    }
+}

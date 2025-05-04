@@ -1,0 +1,90 @@
+{
+    "kind": "collectionType",
+    "collectionName": "hero_slides",
+    "info": {
+        "singularName": "hero-slide",
+        "pluralName": "hero-slides",
+        "displayName": "Hero Slide",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {
+        "i18n": {
+            "localized": true
+        }
+    },
+    "attributes": {
+        "Media1": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
+        },
+        "AltMedia1": {
+            "type": "string"
+        },
+        "Media2": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
+        },
+        "AltMedia2": {
+            "type": "string"
+        },
+        "Media3": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": false,
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
+        },
+        "AltMedia3": {
+            "type": "string"
+        },
+        "Avatar": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": false,
+            "required": true
+        },
+        "AltAvatar": {
+            "type": "string"
+        }
+    }
+}
