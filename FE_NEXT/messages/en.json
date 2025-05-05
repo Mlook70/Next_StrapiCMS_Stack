@@ -47,7 +47,8 @@
     "noTeamsOrServices": "No teams or services available.",
     "teamMembers": "Team Members",
     "prevPage": "Previous page",
-    "nextPage": "Next page"
+    "nextPage": "Next page",
+    "placeholder":"search"
   },
     "services": {
       "title": "Our Services",
@@ -56,7 +57,9 @@
       "errorTitle": "Error Loading Services",
       "error": "We couldn't load the services information. Please try again later.",
       "noServices": "No services found. Please add services in your CMS.",
-      "learnMore": "Learn More"
+      "learnMore": "Learn More",
+      "prevButton": "Previous",
+      "nextButton": "Next"
     },
     "header": {
       "nav": {

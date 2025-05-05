@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { Search, X } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocale, useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setQuery, clearQuery, selectQuery } from '@/store/slices/searchSlice';
@@ -19,7 +19,10 @@ export default function SearchBar({
   placeholder,
   minimal = false
 }: SearchBarProps) {
-  const { t, isRTL } = useLanguage();
+  const locale = useLocale();
+  const t = useTranslations();
+  const isRTL = locale === 'ar';
+
   const dispatch = useAppDispatch();
   const storedQuery = useAppSelector(selectQuery);
   const [localQuery, setLocalQuery] = useState(storedQuery);

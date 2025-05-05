@@ -4,7 +4,6 @@ import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import HeroSection from '@/components/sections/HeroSection';
 import ReduxProvider from '@/providers/ReduxProvider';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';

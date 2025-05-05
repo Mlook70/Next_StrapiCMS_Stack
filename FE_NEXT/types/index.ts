@@ -1,6 +1,34 @@
-// types/index.ts
+export interface HeroSlideData {
+  id: number;
+  AltMedia1: string;
+  AltMedia2: string;
+  AltMedia3: string;
+  AltAvatar: string;
+  locale: string;
+  Media1: {
+    url: string;
+    mime: string;
+  };
+  Media2: {
+    url: string;
+    mime: string;
+  };
+  Media3: {
+    url: string;
+    mime: string;
+  };
+  Avatar: {
+    url: string;
+  };
+}
 
-// Common pagination interface that can be reused across responses
+export interface HeroApiResponse {
+  data: HeroSlideData[];
+  meta: {
+    pagination: Pagination;
+  };
+}
+
 export interface Pagination {
   page: number;
   pageSize: number;

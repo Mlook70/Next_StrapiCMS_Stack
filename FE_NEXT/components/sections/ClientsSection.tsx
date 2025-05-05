@@ -1,13 +1,13 @@
+// Updated ClientsSection.tsx using useClients hook
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Loader2, Quote } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import useSWR from 'swr';
-import { fetcher } from '@/lib/api';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
-import { Client, ClientsResponse } from '@/types';
+import useClients from '@/lib/APIs/hooks/useClients';
 
 export default function ClientsSection(): JSX.Element {
   const locale = useLocale();
@@ -16,40 +16,27 @@ export default function ClientsSection(): JSX.Element {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
-  
-  // Fetch clients/testimonials using SWR, with locale parameter
-  const { data, error, isLoading } = useSWR<ClientsResponse>(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/clients?populate=*&locale=${locale}`,
-    fetcher
-  );
-  
+
+  const { clients, error, isLoading } = useClients();
+
   const handleNavigation = (direction: 'next' | 'prev'): void => {
-    if (isAnimating || !data?.data || data.data.length <= 1) return;
-    
+    if (isAnimating || clients.length <= 1) return;
     setIsAnimating(true);
     setDirection(direction);
-    
     if (direction === 'next') {
-      setActiveTestimonial((prev) => (prev + 1) % data.data.length);
+      setActiveTestimonial((prev) => (prev + 1) % clients.length);
     } else {
-      setActiveTestimonial((prev) => 
-        prev === 0 ? data.data.length - 1 : prev - 1
-      );
+      setActiveTestimonial((prev) => (prev === 0 ? clients.length - 1 : prev - 1));
     }
   };
-  
+
   useEffect(() => {
-    // Reset animation flag after transition completes
     if (isAnimating) {
-      const timer = setTimeout(() => {
-        setIsAnimating(false);
-      }, 500); // Match this to the transition duration
-      
+      const timer = setTimeout(() => setIsAnimating(false), 500);
       return () => clearTimeout(timer);
     }
   }, [isAnimating]);
 
-  // Handle loading state
   if (isLoading) {
     return (
       <section className="py-20 min-h-[60vh] flex items-center justify-center">
@@ -61,7 +48,6 @@ export default function ClientsSection(): JSX.Element {
     );
   }
 
-  // Handle error state
   if (error) {
     return (
       <section className="py-20 bg-[#4B2615] text-white">
@@ -72,8 +58,7 @@ export default function ClientsSection(): JSX.Element {
     );
   }
 
-  const testimonials = data?.data || [];
-  
+  const testimonials = clients || [];
 
   const goPrevious = () => handleNavigation('prev');
   const goNext = () => handleNavigation('next');
@@ -81,43 +66,28 @@ export default function ClientsSection(): JSX.Element {
   return (
     <section className="py-20 bg-[#4B2615] text-white">
       <div className="container mx-auto px-4">
-      <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t('title')}
-          </h2>
-          <p className="text-gray-300">
-            {t('subtitle')}
-          </p>
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('title')}</h2>
+          <p className="text-gray-300">{t('subtitle')}</p>
         </div>
-        
+
         {testimonials.length > 0 ? (
           <div className="max-w-4xl mx-auto relative">
-            {/* Testimonials Carousel */}
             <div className="relative overflow-hidden">
-              <div 
+              <div
                 className={cn(
-                  "flex transition-transform duration-500 ease-in-out",
-                  isRTL ? "flex-row-reverse" : "flex-row"
+                  'flex transition-transform duration-500 ease-in-out',
+                  isRTL ? 'flex-row-reverse' : 'flex-row'
                 )}
-                style={{ 
+                style={{
                   width: `${testimonials.length * 100}%`,
-                  transform: `translateX(${isRTL 
-                    ? activeTestimonial * (100 / testimonials.length) 
-                    : -activeTestimonial * (100 / testimonials.length)}%)` 
+                  transform: `translateX(${isRTL ? activeTestimonial * (100 / testimonials.length) : -activeTestimonial * (100 / testimonials.length)}%)`
                 }}
               >
-                {testimonials.map((testimonial, index) => (
-                  <div
-                    key={testimonial.id}
-                    className="w-full"
-                    style={{ width: `${100 / testimonials.length}%` }}
-                  >
+                {testimonials.map((testimonial) => (
+                  <div key={testimonial.id} className="w-full" style={{ width: `${100 / testimonials.length}%` }}>
                     <div className="flex flex-col md:flex-row items-center gap-8 px-4">
-                      {/* Testimonial Image */}
-                      <div className={cn(
-                        'w-full md:w-1/3 flex-shrink-0',
-                        isRTL ? 'order-last' : 'order-first'
-                      )}>
+                      <div className={cn('w-full md:w-1/3 flex-shrink-0', isRTL ? 'order-last' : 'order-first')}>
                         <div className="relative h-64 w-64 mx-auto overflow-hidden rounded-lg">
                           {testimonial.Profile ? (
                             <Image
@@ -136,22 +106,14 @@ export default function ClientsSection(): JSX.Element {
                           )}
                         </div>
                       </div>
-                      
-                      {/* Testimonial Content */}
+
                       <div className="w-full md:w-2/3">
                         <div className="bg-[#36190f] rounded-lg p-6 relative">
-                          <Quote className={cn(
-                            "absolute top-3 text-[#4B2615] opacity-20 h-12 w-12",
-                            isRTL ? 'right-3' : 'left-3'
-                          )} />
-                          <p className={cn(
-                            "text-lg mb-6 relative z-10",
-                            isRTL ? 'text-right' : 'text-left'
-                          )}>"{testimonial.Feedback}"</p>
-                          <div className={cn(
-                            "flex items-center",
-                            isRTL ? 'justify-end' : 'justify-start'
-                          )}>
+                          <Quote className={cn('absolute top-3 text-[#4B2615] opacity-20 h-12 w-12', isRTL ? 'right-3' : 'left-3')} />
+                          <p className={cn('text-lg mb-6 relative z-10', isRTL ? 'text-right' : 'text-left')}>
+                            "{testimonial.Feedback}"
+                          </p>
+                          <div className={cn('flex items-center', isRTL ? 'justify-end' : 'justify-start')}>
                             <div className={isRTL ? 'text-right' : 'text-left'}>
                               <h4 className="font-semibold">{testimonial.FirstName} {testimonial.LastName}</h4>
                               <p className="text-gray-300 text-sm">{testimonial.Position}, {testimonial.Company}</p>
@@ -164,25 +126,19 @@ export default function ClientsSection(): JSX.Element {
                 ))}
               </div>
             </div>
-            
-            {/* Navigation */}
+
             {testimonials.length > 1 && (
               <div className="flex justify-center mt-8 space-x-4">
                 <button
-                  onClick={isRTL ? goNext : goPrevious}
+                  onClick={goPrevious}
                   className="bg-[#4d2416] hover:bg-[#3d1d12] rounded-full p-2 transition-colors disabled:opacity-50"
                   aria-label={t('prevButton')}
                   disabled={isAnimating}
                 >
-                  {/* Use the appropriate arrow icon based on text direction */}
                   {isRTL ? <ChevronRight className="h-6 w-6" /> : <ChevronLeft className="h-6 w-6" />}
                 </button>
-                
-                {/* Pagination Indicators */}
-                <div className={cn(
-                  "flex items-center",
-                  isRTL ? "space-x-reverse space-x-4" : "space-x-2"
-                )}>
+
+                <div className={cn('flex items-center', isRTL ? 'space-x-reverse space-x-4' : 'space-x-2')}>
                   {testimonials.map((_, index) => (
                     <button
                       key={index}
@@ -200,14 +156,13 @@ export default function ClientsSection(): JSX.Element {
                     />
                   ))}
                 </div>
-                
+
                 <button
-                  onClick={isRTL ? goPrevious : goNext}
+                  onClick={ goNext}
                   className="bg-[#4d2416] hover:bg-[#3d1d12] rounded-full p-2 transition-colors disabled:opacity-50"
                   aria-label={t('nextButton')}
                   disabled={isAnimating}
                 >
-                  {/* Use the appropriate arrow icon based on text direction */}
                   {isRTL ? <ChevronLeft className="h-6 w-6" /> : <ChevronRight className="h-6 w-6" />}
                 </button>
               </div>
