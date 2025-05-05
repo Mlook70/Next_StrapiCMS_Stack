@@ -11,15 +11,15 @@
   <img src="assets/Img6.png" width="45%" />
 </p>
 <p align="center">
-  <img src="assets/Img7.png" width="45%" />
+  <img src="assets/Img10.png" width="45%" />
   <img src="assets/Img8.png" width="45%" />
 </p>
 <p align="center">
+  <img src="assets/Img15.png" width="45%" />
   <img src="assets/Img9.png" width="45%" />
-  <img src="assets/Img10.png" width="45%" />
 </p>
 <p align="center">
-  <img src="assets/Img20.png" width="45%" />
+  <img src="assets/Img18.png" width="45%" />
   <img src="assets/Img11.png" width="45%" />
 </p>
 <p align="center">
@@ -32,10 +32,10 @@
 </p>
 <p align="center">
   <img src="assets/Img17.png" width="45%" />
-  <img src="assets/Img18.png" width="45%" />
+  <img src="assets/Img20.png" width="45%" />
 </p>
 <p align="center">
-  <img src="assets/Img15.png" width="45%" />
+  <img src="assets/Img7.png" width="45%" />
   <img src="assets/Img12.png" width="45%" />
 </p>
 
