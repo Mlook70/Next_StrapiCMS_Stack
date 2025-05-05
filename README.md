@@ -1,15 +1,43 @@
-| Home                 | About                | Services              | Team                  |
-| -------------------- | -------------------- | --------------------- | --------------------- |
-| ![](assets/Img1.png) | ![](assets/Img2.png) | ![](assets/Img9.png)  | ![](assets/Img10.png) |
-| ![](assets/Img3.png) | ![](assets/Img6.png) | ![](assets/Img11.png) | ![](assets/Img14.png) |
-
-
-| Footer                | Auth Forms            | CMS                   | Other                 |
-| --------------------- | --------------------- | --------------------- | --------------------- |
-| ![](assets/Img7.png)  | ![](assets/Img4.png)  | ![](assets/Img16.png) | ![](assets/Img17.png) |
-| ![](assets/Img5.png)  | ![](assets/Img8.png)  | ![](assets/Img18.png) | ![](assets/Img19.png) |
-| ![](assets/Img15.png) | ![](assets/Img12.png) | ![](assets/Img13.png) | ![](assets/Img20.png) |
-
+<p align="center">
+  <img src="assets/Img1.png" width="45%" />
+  <img src="assets/Img2.png" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/Img3.png" width="45%" />
+  <img src="assets/Img4.png" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/Img5.png" width="45%" />
+  <img src="assets/Img6.png" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/Img10.png" width="45%" />
+  <img src="assets/Img8.png" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/Img15.png" width="45%" />
+  <img src="assets/Img9.png" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/Img18.png" width="45%" />
+  <img src="assets/Img11.png" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/Img13.png" width="45%" />
+  <img src="assets/Img14.png" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/Img19.png" width="45%" />
+  <img src="assets/Img16.png" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/Img17.png" width="45%" />
+  <img src="assets/Img20.png" width="45%" />
+</p>
+<p align="center">
+  <img src="assets/Img7.png" width="45%" />
+  <img src="assets/Img12.png" width="45%" />
+</p>
 
 # Next_StrapiCMS_Stack
 
