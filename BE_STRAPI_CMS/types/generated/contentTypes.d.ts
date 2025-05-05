@@ -678,6 +678,34 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSubscribeSubscribe extends Struct.CollectionTypeSchema {
+  collectionName: 'subscribes';
+  info: {
+    displayName: 'Subscribe';
+    pluralName: 'subscribes';
+    singularName: 'subscribe';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Email: Schema.Attribute.Email;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::subscribe.subscribe'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
   collectionName: 'team_members';
   info: {
@@ -1268,6 +1296,7 @@ declare module '@strapi/strapi' {
       'api::hero-slide.hero-slide': ApiHeroSlideHeroSlide;
       'api::service-content.service-content': ApiServiceContentServiceContent;
       'api::service.service': ApiServiceService;
+      'api::subscribe.subscribe': ApiSubscribeSubscribe;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
