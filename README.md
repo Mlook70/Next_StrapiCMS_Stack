@@ -19,15 +19,15 @@
   <img src="assets/Img10.png" width="45%" />
 </p>
 <p align="center">
+  <img src="assets/Img20.png" width="45%" />
   <img src="assets/Img11.png" width="45%" />
-  <img src="assets/Img12.png" width="45%" />
 </p>
 <p align="center">
   <img src="assets/Img13.png" width="45%" />
   <img src="assets/Img14.png" width="45%" />
 </p>
 <p align="center">
-  <img src="assets/Img15.png" width="45%" />
+  <img src="assets/Img19.png" width="45%" />
   <img src="assets/Img16.png" width="45%" />
 </p>
 <p align="center">
@@ -35,8 +35,8 @@
   <img src="assets/Img18.png" width="45%" />
 </p>
 <p align="center">
-  <img src="assets/Img19.png" width="45%" />
-  <img src="assets/Img20.png" width="45%" />
+  <img src="assets/Img15.png" width="45%" />
+  <img src="assets/Img12.png" width="45%" />
 </p>
 
 # Next_StrapiCMS_Stack
